@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NF.ConsoleApp.NewBD", "NF.ConsoleApp.NewBD\NF.ConsoleApp.NewBD.csproj", "{0BF3D8C0-6F9F-455B-B0E1-863B682708B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.ConsoleApp", "NF.ConsoleApp.NewBD\NorthWind.ConsoleApp.csproj", "{0BF3D8C0-6F9F-455B-B0E1-863B682708B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Entities", "NorthWind.Entities\NorthWind.Entities.csproj", "{C6310515-C295-4D2A-B963-79246E3BE910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.Entities", "NorthWind.Entities\NorthWind.Entities.csproj", "{C6310515-C295-4D2A-B963-79246E3BE910}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.DAL", "NorthWind.DAL\NorthWind.DAL.csproj", "{88FFE320-5B93-4F79-99B0-EF6D505F57E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.DAL", "NorthWind.DAL\NorthWind.DAL.csproj", "{88FFE320-5B93-4F79-99B0-EF6D505F57E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.WebApp", "NorthWind.WebApp\NorthWind.WebApp.csproj", "{2F857353-8055-4BCC-9C60-24B9AF49F657}"
 EndProject
