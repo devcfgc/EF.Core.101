@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using NorthWind.DAL;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using NorthWind.Entities;
 
 namespace NorthWind.WpfApp
 {
@@ -20,9 +10,34 @@ namespace NorthWind.WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private NorthWindContext _context;
+
         public MainWindow()
         {
             InitializeComponent();
+            _context = new NorthWindContext();
+            LoadCategories();
+        }
+
+        private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
+        {
+            var newCategory = new Category()
+            {
+                CategoryName = TxtCategoryName.Text
+            };
+            _context.Categories.Add(newCategory);
+            var recordsAffected = _context.SaveChanges();
+
+            if (recordsAffected == 0)
+            {
+                MessageBox.Show("Error: Data was not saved");
+            }
+            LoadCategories();
+        }
+
+        void LoadCategories()
+        {
+            DGCategories.ItemsSource = _context.Categories.ToList();
         }
     }
 }
