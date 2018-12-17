@@ -1,0 +1,24 @@
+﻿@model NorthWind.Entities.Category
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("UpdateOrDelete", "Home"))
+        {
+            <div>ID: @Html.TextBoxFor(c => c.CategoryId)</div>
+            <div>Name: @Html.TextBoxFor(c => c.CategoryName)</div>
+            <div><input type="submit" name="BtnUpdate" value="Update"/></div>
+            <div><input type="submit" name="BtnDelete" value="Delete"/></div>
+        }
+    </div>
+</body>
+</html>
