@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using NorthWind.DAL;
 using System.Windows;
+using System.Windows.Controls;
 using NorthWind.Entities;
 
 namespace NorthWind.WpfApp
@@ -26,8 +27,8 @@ namespace NorthWind.WpfApp
                 CategoryName = TxtCategoryName.Text
             };
             _context.Categories.Add(newCategory);
-            var recordsAffected = _context.SaveChanges();
 
+            var recordsAffected = _context.SaveChanges();
             if (recordsAffected == 0)
             {
                 MessageBox.Show("Error: Data was not saved");
@@ -38,6 +39,18 @@ namespace NorthWind.WpfApp
         void LoadCategories()
         {
             DGCategories.ItemsSource = _context.Categories.ToList();
+        }
+
+        private void DGCategories_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Category categorySelected = DGCategories.SelectedItem as Category;
+            UpdateAndDelete window = new UpdateAndDelete(categorySelected, _context);
+            window.ShowDialog();
+        }
+
+        private void BtnUpdateData_OnClick(object sender, RoutedEventArgs e)
+        {
+            LoadCategories();
         }
     }
 }

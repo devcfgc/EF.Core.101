@@ -14,8 +14,10 @@
         <StackPanel Orientation="Horizontal">
             <Label>Category name:</Label>
             <TextBox Name="TxtCategoryName" Margin="10" Width="150"/>
-            <Button Name="BtnCreate" Content="Create" Click="BtnCreate_OnClick"/>
+            <Button Name="BtnCreate" Content="Create" Click="BtnCreate_OnClick" Margin="10"/>
+            <Button Name="BtnUpdateData" Content="Update Data" Click="BtnUpdateData_OnClick" Margin="10"/>
         </StackPanel>
-        <DataGrid Grid.Row="1" Name="DGCategories"/>
+        <DataGrid Grid.Row="1" Name="DGCategories"
+                  SelectionChanged="DGCategories_OnSelectionChanged"/>
     </Grid>
 </Window>
