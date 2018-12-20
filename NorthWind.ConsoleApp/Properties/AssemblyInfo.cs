@@ -1,15 +1,15 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NF.ConsoleApp.NewBD")]
+[assembly: AssemblyTitle("NorthWind.ConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NF.ConsoleApp.NewBD")]
+[assembly: AssemblyProduct("NorthWind.ConsoleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0bf3d8c0-6f9f-455b-b0e1-863b682708b4")]
+[assembly: Guid("32502810-dd6d-4ec6-b574-81e1e6c65fe2")]
 
 // Version information for an assembly consists of the following four values:
 //

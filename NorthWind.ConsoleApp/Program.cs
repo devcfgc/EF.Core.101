@@ -2,7 +2,7 @@
 using NorthWind.Entities;
 using System;
 
-namespace NF.ConsoleApp.NewBD
+namespace NorthWind.ConsoleApp
 {
     class Program
     {
