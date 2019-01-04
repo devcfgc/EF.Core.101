@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using NorthWind.DAL.SQLite.Xamarin;
+using Microsoft.EntityFrameworkCore;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NorthWind.XamarinFormsApp
@@ -10,8 +12,16 @@ namespace NorthWind.XamarinFormsApp
         public App()
         {
             InitializeComponent();
-
+            GetContext().Database.Migrate();
             MainPage = new MainPage();
+        }
+
+        public static NorthWindContext GetContext()
+        {
+            string dbPath = DependencyService.Get<IDataBaseService>().
+                GetFullPath("NorthWind.db");
+
+            return new NorthWindContext(dbPath);
         }
 
         protected override void OnStart()

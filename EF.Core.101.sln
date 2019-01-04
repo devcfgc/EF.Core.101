@@ -27,9 +27,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.XamarinFormsApp.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.XamarinFormsApp.UWP", "NorthWind.XamarinFormsApp\NorthWind.XamarinFormsApp.UWP\NorthWind.XamarinFormsApp.UWP.csproj", "{9E872E10-FB93-4812-95E0-D4A596541155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.XamarinFormsApp", "NorthWind.XamarinFormsApp\NorthWind.XamarinFormsApp\NorthWind.XamarinFormsApp.csproj", "{D7917DFA-1BF7-48C8-A899-FF8992BEBD18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.XamarinFormsApp", "NorthWind.XamarinFormsApp\NorthWind.XamarinFormsApp\NorthWind.XamarinFormsApp.csproj", "{D7917DFA-1BF7-48C8-A899-FF8992BEBD18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.DAL.SQLite.Xamarin", "NorthWind.DAL.SQLite.Xamarin\NorthWind.DAL.SQLite.Xamarin.csproj", "{8FAABED0-D580-495C-8432-33EAC9926762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind.DAL.SQLite.Xamarin", "NorthWind.DAL.SQLite.Xamarin\NorthWind.DAL.SQLite.Xamarin.csproj", "{8FAABED0-D580-495C-8432-33EAC9926762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.ConsoleXamarinApp", "NorthWind.ConsoleXamarinApp\NorthWind.ConsoleXamarinApp.csproj", "{83FEA3A3-7D4F-4849-A777-DB240F09D69F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -343,6 +345,26 @@ Global
 		{8FAABED0-D580-495C-8432-33EAC9926762}.Release|x64.Build.0 = Release|Any CPU
 		{8FAABED0-D580-495C-8432-33EAC9926762}.Release|x86.ActiveCfg = Release|Any CPU
 		{8FAABED0-D580-495C-8432-33EAC9926762}.Release|x86.Build.0 = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|x64.Build.0 = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Debug|x86.Build.0 = Debug|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|ARM.Build.0 = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|ARM64.Build.0 = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|x64.ActiveCfg = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|x64.Build.0 = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|x86.ActiveCfg = Release|Any CPU
+		{83FEA3A3-7D4F-4849-A777-DB240F09D69F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

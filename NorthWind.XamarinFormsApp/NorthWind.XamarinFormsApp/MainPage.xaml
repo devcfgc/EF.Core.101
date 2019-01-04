@@ -5,10 +5,20 @@
              x:Class="NorthWind.XamarinFormsApp.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0,50,0,0"/>
+        </StackLayout.Padding>
+
+        <Entry x:Name="CategoryName"/>
+        <Button Clicked="Button_OnClicked" Text="Add"/>
+
+        <ListView x:Name="Categories">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding CategoryName}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>

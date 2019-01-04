@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NorthWind.DAL.SQLite.Xamarin\NorthWind.DAL.SQLite.Xamarin.csproj" />
+    <ProjectReference Include="..\..\NorthWind.Entities\NorthWind.Entities.csproj" />
+  </ItemGroup>
 </Project>
