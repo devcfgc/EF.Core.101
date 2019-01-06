@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NorthWind.DAL;
@@ -29,6 +30,14 @@ namespace NorthWind.WebCoreApp
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            ////IF we wan to pass parameters
+            //// This example requires to add nuget package Microsoft.EntityFrameworkCore.Sqlite
+            //// NorthWindContext should have a constructor
+            //services.AddDbContext<NorthWindContext>(
+            //    options => options.UseSqlite("Data Source = NorthWind.db")
+            //);
+            //ELSE
             services.AddDbContext<NorthWindContext>();
         }
 
