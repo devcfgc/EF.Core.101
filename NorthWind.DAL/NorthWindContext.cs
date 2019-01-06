@@ -8,6 +8,10 @@ namespace NorthWind.DAL
 {
     public class NorthWindContext : DbContext
     {
+        ////IF we wan to use a custom NorthWindContext constructor
+        //public NorthWindContext(DbContextOptions<NorthWindContext> options) : base(options)
+        //{ }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
 
@@ -22,13 +26,20 @@ namespace NorthWind.DAL
                     .AddJsonFile("appsettings.json", optional: false)
                     .Build();
 
-            optionsBuilder.UseSqlServer(
-                // IF APP IS NET CORE
-                configuration.GetConnectionString("NorthWindDatabase")
+            // IF Get connection string from config file
+            //optionsBuilder.UseSqlServer(
+            //    // IF APP IS NET CORE
+            //    //configuration.GetConnectionString("NorthWindDatabase")
 
-                //ELSE NET FRAMEWORK:
-                //System.Configuration.ConfigurationManager.ConnectionStrings["NorthWindDatabase"].ConnectionString
-            );
+            //    //ELSE NET FRAMEWORK:
+            //    System.Configuration.ConfigurationManager.ConnectionStrings["NorthWindDatabase"].ConnectionString
+            //);
+
+            // ELSE
+            optionsBuilder.UseSqlServer(
+                @"Server=(localdb)\MSSQLLocalDB;Database=NorthWind;Trusted_Connection=True",
+                providerOptions => providerOptions.CommandTimeout(60)
+            ).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
     }
 }

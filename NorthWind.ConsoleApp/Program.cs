@@ -1,6 +1,7 @@
 ﻿using NorthWind.DAL;
 using NorthWind.Entities;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace NorthWind.ConsoleApp
 {
@@ -8,6 +9,17 @@ namespace NorthWind.ConsoleApp
     {
         static void Main(string[] args)
         {
+            ////IF we wan to use a custom NorthWindContext constructor
+            //var optionsBuilder = new DbContextOptionsBuilder<NorthWindContext>();
+            //optionsBuilder.UseSqlServer(
+            //    @"Server=(localdb)\MSSQLLocalDB;Database=NorthWind;Trusted_Connection=True",
+            //    providerOptions => providerOptions.CommandTimeout(60)
+            //).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
+            //using (var context = new NorthWindContext(optionsBuilder.Options))
+            //{
+            //}
+
             using (var context = new NorthWindContext())
             {
                 Console.WriteLine("Category name:");
