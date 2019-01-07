@@ -41,5 +41,10 @@ namespace NorthWind.DAL
                 providerOptions => providerOptions.CommandTimeout(60)
             ).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>().HasKey(e => e.EmployeeNumber);
+        }
     }
 }
