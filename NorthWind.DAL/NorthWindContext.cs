@@ -44,7 +44,10 @@ namespace NorthWind.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>().HasKey(e => e.EmployeeNumber);
+            modelBuilder.Entity<Employee>();
+            //modelBuilder.Entity<Employee>().HasKey(e => e.EmployeeNumber);
+
+            //modelBuilder.Ignore<Product>();
         }
     }
 }
