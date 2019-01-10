@@ -46,6 +46,7 @@ namespace NorthWind.DAL
         {
             modelBuilder.Entity<Employee>();
             //modelBuilder.Entity<Employee>().HasKey(e => e.EmployeeNumber);
+            //modelBuilder.Entity<Employee>().Ignore(e => e.LastUpdated);
 
             //modelBuilder.Ignore<Product>();
         }

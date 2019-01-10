@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NorthWind.Entities
 {
@@ -8,5 +10,9 @@ namespace NorthWind.Entities
         //[Key]
         public string RFC { get; set; }
         public string EmployeeNumber { get; set; }
+        //[NotMapped]
+        public bool IsInDatabase { get; set; }
+        public DateTime LastUpdated { get; set; }
+        public string FullName { get; }
     }
 }
