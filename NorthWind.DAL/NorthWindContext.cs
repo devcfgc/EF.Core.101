@@ -49,6 +49,11 @@ namespace NorthWind.DAL
             //modelBuilder.Entity<Employee>().Ignore(e => e.LastUpdated);
 
             //modelBuilder.Ignore<Product>();
+
+            //modelBuilder.Entity<Category>().Property(c => c.CategoryId).ValueGeneratedNever();
+            //modelBuilder.Entity<Category>().Property(c => c.Inserted).ValueGeneratedOnAdd();
+            //modelBuilder.Entity<Category>().Property(c => c.LastUpdated).ValueGeneratedOnAddOrUpdate();
+
         }
     }
 }
