@@ -10,6 +10,7 @@ namespace NorthWind.Entities
         //[DatabaseGenerated(DatabaseGeneratedOption.None)] --> It will have no value
         public int CategoryId { get; set; }
         [Required]
+        [MaxLength(220)]
         public string CategoryName { get; set; }
         public List<Product> Products { get; set; }
         public DateTime Inserted { get; set; }
