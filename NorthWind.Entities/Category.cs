@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NorthWind.Entities
@@ -8,6 +9,7 @@ namespace NorthWind.Entities
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.None)] --> It will have no value
         public int CategoryId { get; set; }
+        [Required]
         public string CategoryName { get; set; }
         public List<Product> Products { get; set; }
         public DateTime Inserted { get; set; }

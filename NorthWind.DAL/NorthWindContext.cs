@@ -50,6 +50,7 @@ namespace NorthWind.DAL
 
             //modelBuilder.Ignore<Product>();
 
+            //modelBuilder.Entity<Category>().Property(c => c.CategoryName).IsRequired();
             //modelBuilder.Entity<Category>().Property(c => c.CategoryId).ValueGeneratedNever();
             //modelBuilder.Entity<Category>().Property(c => c.Inserted).ValueGeneratedOnAdd();
             //modelBuilder.Entity<Category>().Property(c => c.LastUpdated).ValueGeneratedOnAddOrUpdate();
