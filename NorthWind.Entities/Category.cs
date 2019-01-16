@@ -12,8 +12,12 @@ namespace NorthWind.Entities
         [Required]
         [MaxLength(220)]
         public string CategoryName { get; set; }
-        public List<Product> Products { get; set; }
+        //public List<Product> Products { get; set; }
+        public List<Product> NationalProducts { get; set; }
+        public List<Product> ImportedProducts { get; set; }
         public DateTime Inserted { get; set; }
         public DateTime LastUpdated { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
     }
 }

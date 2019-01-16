@@ -49,9 +49,11 @@ namespace NorthWind.DAL
             //modelBuilder.Entity<Employee>().Ignore(e => e.LastUpdated);
 
             //modelBuilder.Ignore<Product>();
-
+            //modelBuilder.Entity<Product>().Property<DateTime>("LastUpdated"); // definition of a shadow property
             //modelBuilder.Entity<Category>().Property(c => c.CategoryName).IsRequired();
             //modelBuilder.Entity<Category>().Property(c => c.CategoryName).HasMaxLength(300);
+            //modelBuilder.Entity<Category>().Property(c => c.CategoryName).IsConcurrencyToken();
+            //modelBuilder.Entity<Category>().Property(c => c.RowVersion).IsRowVersion();
             //modelBuilder.Entity<Category>().Property(c => c.CategoryId).ValueGeneratedNever();
             //modelBuilder.Entity<Category>().Property(c => c.Inserted).ValueGeneratedOnAdd();
             //modelBuilder.Entity<Category>().Property(c => c.LastUpdated).ValueGeneratedOnAddOrUpdate();

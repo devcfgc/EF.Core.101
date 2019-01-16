@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using NorthWind.DAL;
 using NorthWind.Entities;
 
@@ -24,6 +26,13 @@ namespace NorthWind.ConsoleCoreApp
                 {
                     Console.WriteLine($"{category.CategoryId}, {category.CategoryName}");
                 }
+
+                var product = context.Products.FirstOrDefault();
+                //Shadow property
+                var categoryId = context.Entry(product).Property("CategoryId").CurrentValue;
+                //Get all categoryIds related to Products
+                var categoryIdValues = context.Products.Select(p => EF.Property<int>(p, "CategoryId")).ToList();
+                Console.Write($"{product.ProductName},{categoryId}");
 
                 Console.ReadLine();
             }
