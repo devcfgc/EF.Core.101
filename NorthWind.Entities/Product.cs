@@ -22,7 +22,7 @@ namespace NorthWind.Entities
 
         //public int CategoryForeignKey { get; set; }
         public Category Category { get; set; }
-
         public int CategoryStore { get; set; }
+        public int CategoryStoreLocationID { get; set; }
     }
 }
