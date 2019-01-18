@@ -58,6 +58,15 @@ namespace NorthWind.DAL
             //modelBuilder.Entity<Category>().Property(c => c.Inserted).ValueGeneratedOnAdd();
             //modelBuilder.Entity<Category>().Property(c => c.LastUpdated).ValueGeneratedOnAddOrUpdate();
 
+            //modelBuilder.Entity<Category>().HasMany(c => c.NationalProducts).WithOne();
+            modelBuilder.Entity<Category>().HasMany(c => c.NationalProducts).WithOne(p => p.NationalCategory);
+            modelBuilder.Entity<Product>().HasOne(p => p.ImportedCategory).WithMany(c => c.ImportedProducts);
+
+            //modelBuilder.Entity<Product>()
+            //    .HasOne(p => p.Category)
+            //    .WithMany(c => c.Products)
+            //    .HasForeignKey(p => p.CategoryForeignKey);
+
         }
     }
 }
