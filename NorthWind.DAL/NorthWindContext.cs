@@ -89,6 +89,16 @@ namespace NorthWind.DAL
             //    .HasForeignKey(p => new {p.CategoryStore, p.CategoryStoreLocationID})
             //    .HasPrincipalKey(c => new {c.StoreID, c.StoreLocationID});
 
+            //modelBuilder.Entity<Product>()
+            //    .HasOne(p => p.Category)
+            //    .WithMany(c => c.Products)
+            //    .IsRequired();
+
+            //Delete cascade
+            //modelBuilder.Entity<Product>()
+            //    .HasOne(p => p.Category)
+            //    .WithMany(c => c.Products)
+            //    .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
