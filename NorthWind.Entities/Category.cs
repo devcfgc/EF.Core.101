@@ -7,6 +7,7 @@ namespace NorthWind.Entities
 {
     public class Category
     {
+        public int StoreID { get; set; }
         //[DatabaseGenerated(DatabaseGeneratedOption.None)] --> It will have no value
         public int CategoryId { get; set; }
         [Required]

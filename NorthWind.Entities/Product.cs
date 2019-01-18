@@ -21,6 +21,8 @@ namespace NorthWind.Entities
         public Category ImportedCategory { get; set; }
 
         //public int CategoryForeignKey { get; set; }
-        //public Category Category { get; set; }
+        public Category Category { get; set; }
+
+        public int CategoryStore { get; set; }
     }
 }

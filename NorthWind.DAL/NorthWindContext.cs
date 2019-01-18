@@ -67,6 +67,14 @@ namespace NorthWind.DAL
             //    .WithMany(c => c.Products)
             //    .HasForeignKey(p => p.CategoryForeignKey);
 
+            //Composite Foreign key
+            modelBuilder.Entity<Category>()
+                .HasKey(c => new { c.StoreID, c.CategoryId});
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany(c => Products)
+                .HasForeignKey(p => new {p.CategoryStore, p.CategoryId});
+
         }
     }
 }
