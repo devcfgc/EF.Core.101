@@ -99,6 +99,25 @@ namespace NorthWind.DAL
             //    .HasOne(p => p.Category)
             //    .WithMany(c => c.Products)
             //    .OnDelete(DeleteBehavior.Cascade);
+
+            //modelBuilder.Entity<Product>()
+            //    .HasOne(p => p.ProductImage)
+            //    .WithOne(pi => pi.Product)
+            //    .HasForeignKey<ProductImage>(pi => pi.ProductForeignKey);
+
+            //Many to many
+            modelBuilder.Entity<ProductImage>()
+                .HasKey(pi => new {pi.ImageID, pi.ProductID});
+
+            modelBuilder.Entity<ProductImage>()
+                .HasOne(pi => pi.Image)
+                .WithMany(i => i.ProductImages)
+                .HasForeignKey(pi => pi.ProductID);
+
+            modelBuilder.Entity<ProductImage>()
+                .HasOne(pi => pi.Product)
+                .WithMany(p => p.ProductImages)
+                .HasForeignKey(pi => pi.ImageID);
         }
     }
 }

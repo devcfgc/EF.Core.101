@@ -24,5 +24,8 @@ namespace NorthWind.Entities
         public Category Category { get; set; }
         public int CategoryStore { get; set; }
         public int CategoryStoreLocationID { get; set; }
+
+        public ProductImage ProductImage { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
     }
 }
