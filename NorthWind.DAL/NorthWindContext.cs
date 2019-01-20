@@ -105,7 +105,7 @@ namespace NorthWind.DAL
             //    .WithOne(pi => pi.Product)
             //    .HasForeignKey<ProductImage>(pi => pi.ProductForeignKey);
 
-            //Many to many
+            //Many to many - a table in the middle of to entities
             modelBuilder.Entity<ProductImage>()
                 .HasKey(pi => new {pi.ImageID, pi.ProductID});
 
@@ -118,6 +118,15 @@ namespace NorthWind.DAL
                 .HasOne(pi => pi.Product)
                 .WithMany(p => p.ProductImages)
                 .HasForeignKey(pi => pi.ImageID);
+
+            //Index
+
+            //modelBuilder.Entity<Category>()
+            //    .HasIndex(c => c.CategoryName)
+            //    .IsUnique();
+
+            modelBuilder.Entity<Category>()
+                .HasIndex(c => new {c.CategoryId, c.CategoryName});
         }
     }
 }
