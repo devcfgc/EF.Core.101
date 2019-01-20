@@ -127,6 +127,19 @@ namespace NorthWind.DAL
 
             modelBuilder.Entity<Category>()
                 .HasIndex(c => new {c.CategoryId, c.CategoryName});
+
+            //Alternate keys
+            modelBuilder.Entity<Product>()
+                .HasAlternateKey(p => p.CommentsURL);
+
+            //modelBuilder.Entity<Product>()
+            //    .HasAlternateKey(p => new {p.StoreID, p.LocationID});
+
+            //modelBuilder.Entity<Comment>()
+            //    .HasOne(c => c.Product)
+            //    .WithMany(p => p.Comments)
+            //    .HasForeignKey(c => c.ProductCommentsURL)
+            //    .HasPrincipalKey(p => p.CommentsURL);
         }
     }
 }

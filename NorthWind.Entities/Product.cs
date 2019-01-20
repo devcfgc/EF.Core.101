@@ -27,5 +27,10 @@ namespace NorthWind.Entities
 
         public ProductImage ProductImage { get; set; }
         public List<ProductImage> ProductImages { get; set; }
+        public List<Comment> Comments { get; set; }
+        public string CommentsURL { get; set; }
+        public int StoreID { get; set; }
+        public int LocationID { get; set; }
+
     }
 }
