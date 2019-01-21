@@ -14,6 +14,8 @@ namespace NorthWind.DAL
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<SalesMan> SalesMen { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -140,6 +142,10 @@ namespace NorthWind.DAL
             //    .WithMany(p => p.Comments)
             //    .HasForeignKey(c => c.ProductCommentsURL)
             //    .HasPrincipalKey(p => p.CommentsURL);
+
+            //Inheritance
+            modelBuilder.Entity<SalesMan>()
+                .HasBaseType<Employee>();
         }
     }
 }
