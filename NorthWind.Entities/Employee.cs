@@ -14,5 +14,20 @@ namespace NorthWind.Entities
         public bool IsInDatabase { get; set; }
         public DateTime LastUpdated { get; set; }
         public string FullName { get; }
+        
+        //Backing fields
+        // _eMail, _Email, m_eMail, m_Email
+        // To be modified we need to use the EF syntax for assignation:
+        // Context.Entry(Employee).Property("Email").CurrentValue = devcfgc@devcfgc.com
+        private string _Email;
+        public string Email
+        {
+            get { return _Email; }
+            set
+            {
+                //Validation
+                _Email = value;
+            }
+        }
     }
 }
