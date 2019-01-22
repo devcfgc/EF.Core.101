@@ -1,6 +1,7 @@
 ﻿using NorthWind.DAL;
 using NorthWind.Entities;
 using System;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 namespace NorthWind.ConsoleApp
@@ -36,6 +37,11 @@ namespace NorthWind.ConsoleApp
                 {
                     Console.WriteLine($"{category.CategoryId}, {category.CategoryName}");
                 }
+
+                //Get data from field with no property
+                var eMails = context.Employees.Select(
+                    e => EF.Property<string>(e, "Email")
+                ).ToList();
 
                 Console.ReadLine();
             }

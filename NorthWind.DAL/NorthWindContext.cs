@@ -154,7 +154,8 @@ namespace NorthWind.DAL
                 .UsePropertyAccessMode(PropertyAccessMode.FieldDuringConstruction);
 
             modelBuilder.Entity<Employee>()
-                .Property("NewEmail");
+                .Property<string>("eMail")
+                .HasField("ValidateEmail");
         }
     }
 }

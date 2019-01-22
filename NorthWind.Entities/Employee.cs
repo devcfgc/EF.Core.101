@@ -32,17 +32,17 @@ namespace NorthWind.Entities
 
 
         // More on backing fields
-        private string NewEmail;
+        private string ValidateEmail;
 
         public string GetNewEmail()
         {
-            return NewEmail;
+            return ValidateEmail;
         }
 
         public void SetNewEmail(string newEmail)
         {
             //Validation
-            NewEmail = newEmail;
+            ValidateEmail = newEmail;
         }
     }
 }
