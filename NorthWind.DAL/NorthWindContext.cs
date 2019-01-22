@@ -146,6 +146,15 @@ namespace NorthWind.DAL
             //Inheritance
             modelBuilder.Entity<SalesMan>()
                 .HasBaseType<Employee>();
+
+            //Backing fields
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Email)
+                .HasField("_Email")
+                .UsePropertyAccessMode(PropertyAccessMode.FieldDuringConstruction);
+
+            modelBuilder.Entity<Employee>()
+                .Property("NewEmail");
         }
     }
 }

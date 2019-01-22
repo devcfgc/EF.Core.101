@@ -29,5 +29,20 @@ namespace NorthWind.Entities
                 _Email = value;
             }
         }
+
+
+        // More on backing fields
+        private string NewEmail;
+
+        public string GetNewEmail()
+        {
+            return NewEmail;
+        }
+
+        public void SetNewEmail(string newEmail)
+        {
+            //Validation
+            NewEmail = newEmail;
+        }
     }
 }
