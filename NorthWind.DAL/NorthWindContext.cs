@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Configuration;
 using NorthWind.Entities;
 
@@ -156,6 +157,20 @@ namespace NorthWind.DAL
             modelBuilder.Entity<Employee>()
                 .Property<string>("eMail")
                 .HasField("ValidateEmail");
+
+            //Value conversion
+
+            //var GenderConverter = new ValueConverter<Gender, string>(
+            //    value => value.ToString(), //convert to string to be saved in the DB
+            //    value => (Gender) Enum.Parse(typeof(Gender), value) //the string value that comes from DB convert to Gender
+            //);
+
+            //modelBuilder.Entity<Employee>()
+            //    .Property(e => e.Gender)
+            //    .HasConversion<string>();
+                //.HasConversion<byte>();
+            //.HasConversion(new EnumToNumberConverter<Gender,byte>());
+            //.HasConversion(new EnumToStringConverter<Gender>());
         }
     }
 }

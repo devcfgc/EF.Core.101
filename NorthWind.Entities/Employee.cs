@@ -30,7 +30,6 @@ namespace NorthWind.Entities
             }
         }
 
-
         // More on backing fields
         private string ValidateEmail;
 
@@ -44,5 +43,8 @@ namespace NorthWind.Entities
             //Validation
             ValidateEmail = newEmail;
         }
+
+        [Column(TypeName = "tinyint")]
+        public Gender Gender { get; set; }
     }
 }
