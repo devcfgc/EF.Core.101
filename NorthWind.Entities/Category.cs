@@ -7,6 +7,11 @@ namespace NorthWind.Entities
 {
     public class Category
     {
+        public Category(string categoryName)
+        {
+            CategoryName = categoryName;
+        }
+
         public int StoreID { get; set; }
         public int StoreLocationID { get; set; }
 
@@ -15,7 +20,7 @@ namespace NorthWind.Entities
         [Required]
         [MaxLength(220)]
         public string CategoryName { get; set; }
-        //public List<Product> Products { get; set; }
+        public List<Product> Products { get; set; }
         public List<Product> NationalProducts { get; set; }
         public List<Product> ImportedProducts { get; set; }
         public DateTime Inserted { get; set; }

@@ -8,9 +8,17 @@ namespace NorthWind.Entities
 {
     public class Product
     {
+
+        public Product(int productID, string productName, decimal unitPrice)
+        {
+            ProductId = productID;
+            ProductName = productName;
+            UnitPrice = unitPrice;
+        }
+
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public decimal UnitPrice { get; set; }
+        public decimal UnitPrice { get; private set; }
         public int UnitsInStock { get; set; }
         public int CategoryId { get; set; }
         //[ForeignKey("CategoryForeignKey")]
