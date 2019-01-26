@@ -39,6 +39,7 @@ namespace NorthWind.Entities
         public string CommentsURL { get; set; }
         public int StoreID { get; set; }
         public int LocationID { get; set; }
+        public Website WebsiteInfo { get; set; }
 
     }
 }

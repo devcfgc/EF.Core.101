@@ -168,9 +168,13 @@ namespace NorthWind.DAL
             //modelBuilder.Entity<Employee>()
             //    .Property(e => e.Gender)
             //    .HasConversion<string>();
-                //.HasConversion<byte>();
+            //.HasConversion<byte>();
             //.HasConversion(new EnumToNumberConverter<Gender,byte>());
             //.HasConversion(new EnumToStringConverter<Gender>());
+
+            //Owned type
+            modelBuilder.Entity<Product>()
+                .OwnsOne(p => p.WebsiteInfo);
         }
     }
 }
