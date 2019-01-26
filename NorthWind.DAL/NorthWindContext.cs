@@ -173,8 +173,18 @@ namespace NorthWind.DAL
             //.HasConversion(new EnumToStringConverter<Gender>());
 
             //Owned type
+            //modelBuilder.Entity<Product>()
+            //    .OwnsOne(p => p.WebsiteInfo);
+
             modelBuilder.Entity<Product>()
-                .OwnsOne(p => p.WebsiteInfo);
+                .OwnsOne(
+                    p => p.WebsiteInfo,
+                    w =>
+                     {
+                         w.Property(ws => ws.URL).HasColumnName("WebsiteURL");
+                         w.Property(ws => ws.Title).HasColumnName("WebsiteTitle");
+                     }
+                );
         }
     }
 }
