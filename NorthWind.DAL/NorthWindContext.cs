@@ -17,6 +17,7 @@ namespace NorthWind.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<SalesMan> SalesMen { get; set; }
+        public DbSet<Order> Order { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -176,15 +177,26 @@ namespace NorthWind.DAL
             //modelBuilder.Entity<Product>()
             //    .OwnsOne(p => p.WebsiteInfo);
 
-            modelBuilder.Entity<Product>()
-                .OwnsOne(
-                    p => p.WebsiteInfo,
-                    w =>
-                     {
-                         w.Property(ws => ws.URL).HasColumnName("WebsiteURL");
-                         w.Property(ws => ws.Title).HasColumnName("WebsiteTitle");
-                     }
-                );
+            //modelBuilder.Entity<Product>()
+            //    .OwnsOne(
+            //        p => p.WebsiteInfo,
+            //        w =>
+            //         {
+            //             w.Property(ws => ws.URL).HasColumnName("WebsiteURL");
+            //             w.Property(ws => ws.Title).HasColumnName("WebsiteTitle");
+            //         }
+            //    );
+
+            //Owned Nested Entity Types
+            //modelBuilder.Entity<Order>()
+            //    .OwnsOne(
+            //        o => o.Customer,
+            //        c =>
+            //        {
+            //            c.OwnsOne(cp => cp.HomePhone);
+            //            c.OwnsOne(cp => cp.OfficePhone);
+            //        }
+            //    );
         }
     }
 }
