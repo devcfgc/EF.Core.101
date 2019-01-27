@@ -2,7 +2,7 @@
 
 namespace NorthWind.Entities
 {
-    [Owned]
+    //[Owned]
     public class Customer
     {
         public Order Order { get; set; }

@@ -188,15 +188,17 @@ namespace NorthWind.DAL
             //    );
 
             //Owned Nested Entity Types
-            //modelBuilder.Entity<Order>()
-            //    .OwnsOne(
-            //        o => o.Customer,
-            //        c =>
-            //        {
-            //            c.OwnsOne(cp => cp.HomePhone);
-            //            c.OwnsOne(cp => cp.OfficePhone);
-            //        }
-            //    );
+            modelBuilder.Entity<Order>()
+                .OwnsOne(
+                    o => o.Customer,
+                    c =>
+                    {
+                        c.OwnsOne(cp => cp.HomePhone);
+                        c.OwnsOne(cp => cp.OfficePhone);
+                        c.ToTable("CustomerOrder");
+                    }
+                );
+
         }
     }
 }

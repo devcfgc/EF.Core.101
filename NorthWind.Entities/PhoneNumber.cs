@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NorthWind.Entities
 {
-    [Owned]
+    //[Owned]
     public class PhoneNumber
     {
         public string CountryCode { get; set; }
