@@ -251,6 +251,10 @@ namespace NorthWind.DAL
                 );
 
             modelBuilder.HasDefaultSchema("Catalog");
+
+            modelBuilder.Entity<Employee>()
+                .Property(E => E.FullName)
+                .HasComputedColumnSql("[FirstName] + ',' + [LastName]");
         }
     }
 }
