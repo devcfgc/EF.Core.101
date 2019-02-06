@@ -17,7 +17,9 @@ namespace NorthWind.Entities
         }
 
         public int ProductId { get; set; }
+        //[Column(TypeName = "varchar(100)")]
         public string ProductName { get; set; }
+        //[Column(TypeName = "decimal (5,2)")]
         public decimal UnitPrice { get; private set; }
         public int UnitsInStock { get; set; }
         public int CategoryId { get; set; }

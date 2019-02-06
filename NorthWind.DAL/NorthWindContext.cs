@@ -236,6 +236,15 @@ namespace NorthWind.DAL
             modelBuilder.Entity<Category>()
                 .Property(c => c.CategoryId)
                 .HasColumnName("ID");
+
+            modelBuilder.Entity<Product>
+                (
+                    P =>
+                    {
+                        P.Property(p => p.ProductName).HasColumnType("varchar(100)");
+                        P.Property(p => p.UnitPrice).HasColumnType("decimal(9,3)");
+                    }
+                );
         }
     }
 }
