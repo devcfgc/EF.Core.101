@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Configuration;
 using NorthWind.Entities;
@@ -16,6 +17,7 @@ namespace NorthWind.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbQuery<CategoryProductsCount> CategoryProductsCounts { get; set; }
+        public bool? IgnoreDescriptionAndImage { get; set;  }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<SalesMan> SalesMen { get; set; }
@@ -32,6 +34,10 @@ namespace NorthWind.DAL
                     .AddJsonFile("appsettings.json", optional: false)
                     .Build();
 
+            optionsBuilder.UseSqlServer(
+                @"Server=(localdb)\MSSQLLocalDB;Database=NorthWind;Trusted_Connection=True"
+            ).ReplaceService<IModelCacheKeyFactory,NorthWindModelCacheFactory>() ;
+
             // IF Get connection string from config file
             //optionsBuilder.UseSqlServer(
             //    // IF APP IS NET CORE
@@ -42,10 +48,10 @@ namespace NorthWind.DAL
             //);
 
             // ELSE
-            optionsBuilder.UseSqlServer(
-                @"Server=(localdb)\MSSQLLocalDB;Database=NorthWind;Trusted_Connection=True",
-                providerOptions => providerOptions.CommandTimeout(60)
-            ).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            //optionsBuilder.UseSqlServer(
+            //    @"Server=(localdb)\MSSQLLocalDB;Database=NorthWind;Trusted_Connection=True",
+            //    providerOptions => providerOptions.CommandTimeout(60)
+            //).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -203,10 +209,33 @@ namespace NorthWind.DAL
 
 
             //Create a view
-            modelBuilder.Query<CategoryProductsCount>()
-                .ToView("V_CategoryProductsCount")
-                .Property(v => v.CategoryName)
-                .HasColumnName("Name");
+            //modelBuilder.Query<CategoryProductsCount>()
+            //    .ToView("V_CategoryProductsCount")
+            //    .Property(v => v.CategoryName)
+            //    .HasColumnName("Name");
+
+            if(IgnoreDescriptionAndImage.HasValue)
+            {
+                if(IgnoreDescriptionAndImage.Value)
+                {
+                    modelBuilder.Query<Category>()
+                        .Ignore(c => c.Description);
+                    modelBuilder.Query<Category>()
+                        .Ignore(c => c.Image);
+                }
+            }
+
+            modelBuilder.Entity<Category>()
+                .HasData
+                (
+                    new Category { CategoryId = 1, CategoryName = "Drinks" },
+                    new Category { CategoryId = 2, CategoryName = "Fruit" },
+                    new Category { CategoryId = 3, CategoryName = "Vegetables" }
+                );
+
+            modelBuilder.Entity<Category>()
+                .Property(c => c.CategoryId)
+                .HasColumnName("ID");
         }
     }
 }
