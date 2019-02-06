@@ -237,6 +237,10 @@ namespace NorthWind.DAL
                 .Property(c => c.CategoryId)
                 .HasColumnName("ID");
 
+            modelBuilder.Entity<Category>()
+                .HasKey(c => c.CategoryId)
+                .HasName("PrimaryKey_CategoryId");
+
             modelBuilder.Entity<Product>
                 (
                     P =>
