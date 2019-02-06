@@ -249,6 +249,8 @@ namespace NorthWind.DAL
                         P.Property(p => p.UnitPrice).HasColumnType("decimal(9,3)");
                     }
                 );
+
+            modelBuilder.HasDefaultSchema("Catalog");
         }
     }
 }
