@@ -263,6 +263,20 @@ namespace NorthWind.DAL
             modelBuilder.Entity<Product>()
                 .Property(P => P.Created)
                 .HasDefaultValueSql("getdate()");
+
+            modelBuilder.HasSequence<int>("OrderNumbers");
+
+            modelBuilder.Entity<Category>()
+                .HasIndex(c => c.CategoryName)
+                .HasName("Index_CategoryName")
+                .IsUnique()
+                .HasFilter(null);
+
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey("CategoryID")
+                .HasConstraintName("ForeingKey_Product_Category");
         }
     }
 }
