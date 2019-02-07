@@ -279,7 +279,8 @@ namespace NorthWind.DAL
                 .HasConstraintName("ForeingKey_Product_Category");
 
             modelBuilder.Entity<Category>()
-                .HasAlternateKey(c => c.CategoryName);
+                .HasAlternateKey(c => c.CategoryName)
+                .HasName("AlternateKey_CategoryName");
         }
     }
 }
