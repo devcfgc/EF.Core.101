@@ -255,6 +255,14 @@ namespace NorthWind.DAL
             modelBuilder.Entity<Employee>()
                 .Property(E => E.FullName)
                 .HasComputedColumnSql("[FirstName] + ',' + [LastName]");
+
+            modelBuilder.Entity<Product>()
+                .Property(P => P.UnitsInStock)
+                .HasDefaultValue(10);
+
+            modelBuilder.Entity<Product>()
+                .Property(P => P.Created)
+                .HasDefaultValueSql("getdate()");
         }
     }
 }

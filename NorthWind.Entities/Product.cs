@@ -22,6 +22,7 @@ namespace NorthWind.Entities
         //[Column(TypeName = "decimal (5,2)")]
         public decimal UnitPrice { get; private set; }
         public int UnitsInStock { get; set; }
+        public DateTime Created { get; set; }
         public int CategoryId { get; set; }
         //[ForeignKey("CategoryForeignKey")]
         //public Category Category { get; set; } // CategoryID is the shadow property for this entity
