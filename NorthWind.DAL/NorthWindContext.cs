@@ -277,6 +277,9 @@ namespace NorthWind.DAL
                 .WithMany(c => c.Products)
                 .HasForeignKey("CategoryID")
                 .HasConstraintName("ForeingKey_Product_Category");
+
+            modelBuilder.Entity<Category>()
+                .HasAlternateKey(c => c.CategoryName);
         }
     }
 }
