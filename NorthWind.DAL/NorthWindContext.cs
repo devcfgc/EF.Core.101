@@ -281,6 +281,11 @@ namespace NorthWind.DAL
             modelBuilder.Entity<Category>()
                 .HasAlternateKey(c => c.CategoryName)
                 .HasName("AlternateKey_CategoryName");
+
+            modelBuilder.Entity<Employee>()
+                .HasDiscriminator<byte>("EmployeeType")
+                .HasValue<Employee>(0)
+                .HasValue<SalesMan>(1);
         }
     }
 }
